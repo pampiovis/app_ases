@@ -1,3 +1,4 @@
+import 'package:app_ases/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -6,8 +7,15 @@ class FlightCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void goToHome() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
+      );
+    }
+
     return Scaffold(
-        backgroundColor: const Color(0xff01AFEF).withOpacity(0.6),
+        backgroundColor: const Color(0xff64CCF3),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -32,7 +40,7 @@ class FlightCode extends StatelessWidget {
                           fontSize: 15, fontWeight: FontWeight.normal)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 40),
+                  padding: const EdgeInsets.only(left: 40, right: 40),
                   child: TextField(
                     decoration: InputDecoration(
                         filled: true,
@@ -47,7 +55,7 @@ class FlightCode extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10, top: 20),
                   child: FilledButton(
-                    onPressed: () {},
+                    onPressed: goToHome,
                     style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all<Color>(
                             const Color(0xff01AFEF))),
