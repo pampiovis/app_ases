@@ -15,7 +15,7 @@ class FlightCode extends StatelessWidget {
     }
 
     return Scaffold(
-        backgroundColor: const Color(0xff64CCF3),
+        backgroundColor: Theme.of(context).colorScheme.primary,
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -58,7 +58,7 @@ class FlightCode extends StatelessWidget {
                     onPressed: goToHome,
                     style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all<Color>(
-                            const Color(0xff01AFEF))),
+                            Theme.of(context).colorScheme.secondary)),
                     child: Text(
                       "Entrar",
                       style: GoogleFonts.montserrat(
