@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'App Monitoramento de Acionamento Ases',
+      debugShowCheckedModeBanner: false,
       theme: theme.copyWith(
           colorScheme: theme.colorScheme.copyWith(
         primary: const Color(0xff64CCF3),

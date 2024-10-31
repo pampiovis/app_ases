@@ -1,4 +1,4 @@
-import 'package:app_ases/screens/home.dart';
+import 'package:app_ases/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,7 +10,7 @@ class FlightCode extends StatelessWidget {
     void goToHome() {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(builder: (context) => const Navigation()),
       );
     }
 
@@ -40,14 +40,14 @@ class FlightCode extends StatelessWidget {
                           fontSize: 15, fontWeight: FontWeight.normal)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 40, right: 40),
+                  padding: const EdgeInsets.only(left: 120, right: 120),
                   child: TextField(
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
                             borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(10.0)),
+                            borderRadius: BorderRadius.circular(20.0)),
                         hintText: "Ex: 1245AQ6",
                         hintStyle: const TextStyle(color: Colors.grey)),
                   ),
@@ -59,10 +59,13 @@ class FlightCode extends StatelessWidget {
                     style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all<Color>(
                             Theme.of(context).colorScheme.secondary)),
-                    child: Text(
-                      "Entrar",
-                      style: GoogleFonts.montserrat(
-                          color: Colors.white, fontSize: 18),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                      child: Text(
+                        "Entrar",
+                        style: GoogleFonts.montserrat(
+                            color: Colors.white, fontSize: 18),
+                      ),
                     ),
                   ),
                 ),
