@@ -14,12 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'App Monitoramento de Acionamento Ases',
       debugShowCheckedModeBanner: false,
-      theme: theme.copyWith(
-          colorScheme: theme.colorScheme.copyWith(
-        primary: const Color(0xff64CCF3),
-        secondary: const Color(0xff01AFEF),
-        tertiary: const Color(0xffAECF8A),
-      )),
+      theme: ThemeData(
+        scaffoldBackgroundColor: const Color(0xFFEFEFEF),
+        colorScheme: theme.colorScheme.copyWith(
+          primary: const Color(0xff64CCF3),
+          secondary: const Color(0xff01AFEF),
+          tertiary: const Color(0xffAECF8A),
+        )
+      ),
       home: const FlightCode(),
     );
   }

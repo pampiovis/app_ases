@@ -1,4 +1,5 @@
 import 'package:app_ases/screens/home.dart';
+import 'package:app_ases/screens/monitor_flight.dart';
 import 'package:flutter/material.dart';
 
 class Navigation extends StatefulWidget {
@@ -12,7 +13,7 @@ class _NavigationState extends State<Navigation> {
   int currentPageIndex = 0;
   List<Widget> widgetOptions = <Widget>[
     const Home(),
-    const Text('Index 1: Acompanhamento'),
+    MonitorFlightScreen(),
     const Text('Index 2: Perfil'),
   ];
 
@@ -20,6 +21,7 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
+        backgroundColor: Colors.white,
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
