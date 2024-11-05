@@ -65,7 +65,6 @@ class MonitorFlightScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     void exit() {
       Navigator.push(
         context,
@@ -84,7 +83,7 @@ class MonitorFlightScreen extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/profile_picture.jpg'),
+                backgroundImage: AssetImage('lib/images/profile_picture.jpg'),
               ),
               SizedBox(height: 8),
               Text(
@@ -116,37 +115,34 @@ class MonitorFlightScreen extends StatelessWidget {
               ),
             ],
           ),
-          child: Column(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                      onTap: () =>_showFlightInfoModal(context),
-                      child: const Column(
-                        children: [
-                          Icon(Icons.info_outline),
-                          Text("Informação", textAlign: TextAlign.center)
-                        ],
-                      )),
-                  GestureDetector(
-                      onTap: (){},
-                      child: const Column(
-                        children: [
-                          Icon(Icons.location_on_outlined),
-                          Text("Enviar posição", textAlign: TextAlign.center)
-                        ],
-                      )),
-                  GestureDetector(
-                      onTap: exit,
-                      child: const Column(
-                        children: [
-                          Icon(Icons.exit_to_app),
-                          Text("Sair", textAlign: TextAlign.center)
-                        ],
-                      ))
-                ],
-              ),
+              GestureDetector(
+                  onTap: () => _showFlightInfoModal(context),
+                  child: const Column(
+                    children: [
+                      Icon(Icons.info_outline),
+                      Text("Info", textAlign: TextAlign.center)
+                    ],
+                  )),
+              GestureDetector(
+                  onTap: () {},
+                  child: const Column(
+                    children: [
+                      Icon(Icons.location_on_outlined),
+                      Text("Enviar posição", textAlign: TextAlign.center)
+                    ],
+                  )),
+              GestureDetector(
+                  onTap: exit,
+                  child: const Column(
+                    children: [
+                      Icon(Icons.exit_to_app),
+                      Text("Sair", textAlign: TextAlign.center)
+                    ],
+                  ))
             ],
           ),
         ),

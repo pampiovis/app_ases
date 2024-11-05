@@ -4,11 +4,9 @@ import 'package:app_ases/models/flight_info.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class FlightService {
-  final String apiUrl = dotenv.env["API_URL"].toString();
-  final String apiKey = dotenv.env["API_KEY"].toString();
-      
-
   Future<List<FlightInfo>> fetchFlightInfo() async {
+    final String apiUrl = dotenv.env["API_URL"].toString();
+    final String apiKey = dotenv.env["API_KEY"].toString();
     final response = await http.get(
       Uri.parse(apiUrl),
       headers: {
