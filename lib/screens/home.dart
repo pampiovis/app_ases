@@ -10,23 +10,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-        body: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      body: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: const ActionBar()
-            ),
-          ),
-        )
+        ActionBar(takePhoto: true)
       ],
     ));
   }

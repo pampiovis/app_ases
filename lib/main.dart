@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'App Monitoramento de Acionamento Ases',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          scaffoldBackgroundColor: const Color(0xFFEFEFEF),
+          scaffoldBackgroundColor: Colors.grey.shade100,
           colorScheme: theme.colorScheme.copyWith(
             primary: const Color(0xff64CCF3),
             secondary: const Color(0xff01AFEF),
