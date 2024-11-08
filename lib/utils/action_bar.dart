@@ -150,7 +150,7 @@ class ActionBar extends StatelessWidget {
                   )),
             ] else ...[
               GestureDetector(
-                  onTap: () => showFlightInfoModal,
+                  onTap: showFlightInfoModal,
                   child: const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
