@@ -30,6 +30,14 @@ class _MonitorFlightScreenState extends State<MonitorFlightScreen> {
       });
     }
 
+    int getIndexInList(String value){
+      if(value.isEmpty){
+        return 0;
+      }else{
+        return ActionBar.positionList.indexOf(value);
+      }
+    }
+
     return Column(
       children: [
         ActionBar(takePhoto: false, updatePosition: changePositionValue),
@@ -84,18 +92,33 @@ class _MonitorFlightScreenState extends State<MonitorFlightScreen> {
                   "Hospital Santa Casa - POA/RS\n24 de outubro, às 18h",
                   style: TextStyle(fontSize: 16),
                 ),
-                const SizedBox(height: 20),
                 Expanded(
-                  child: ListView(
-                    children: [
-                      ListTile(
-                        leading: const Icon(Icons.location_on),
-                        title: Text(currentPosition),
-                      ),
-                    ],
-                  ),
+                  child: Stepper(
+                    currentStep: getIndexInList(currentPosition),
+                    controlsBuilder: (BuildContext context, ControlsDetails details) {
+                      return Row(
+                        children: <Widget>[
+                          Container(
+                            child: null,
+                          ),
+                          Container(
+                            child: null,
+                          ),
+                        ],
+                      );
+                    },
+                    steps: ActionBar.positionList.map<Step>((String value) {
+                      return Step(
+                        title: Text(value), 
+                        content: Container(child: null),
+                        stepStyle: StepStyle(
+                          color: getIndexInList(value) <= getIndexInList(currentPosition)? Theme.of(context).primaryColor: Colors.grey,
+                          connectorColor: getIndexInList(value) <= getIndexInList(currentPosition)? Theme.of(context).primaryColor: Colors.grey
+                        )
+                      );
+                    }).toList()
+                  )
                 ),
-                const SizedBox(height: 20),
                 const Text(
                   "Ponto de Chegada:",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

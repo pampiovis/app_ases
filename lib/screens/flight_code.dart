@@ -82,7 +82,7 @@ class FlightCode extends StatelessWidget {
                       'Discordo',
                       style: GoogleFonts.montserrat(
                         color: Colors.grey,
-                        fontSize: 25,
+                        fontSize: 20,
                       ),
                     ),
                   ],
@@ -114,7 +114,7 @@ class FlightCode extends StatelessWidget {
                       'Concordo',
                       style: GoogleFonts.montserrat(
                         color: Colors.white,
-                        fontSize: 25,
+                        fontSize: 20,
                       ),
                     ),
                   ],

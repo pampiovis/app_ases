@@ -10,6 +10,14 @@ class ActionBar extends StatelessWidget {
   Function updatePosition;
   ActionBar({super.key, required this.takePhoto, required this.updatePosition});
 
+  static List<String> positionList = <String>[
+    'Em deslocamento até aeroporto',
+    'Embarque',
+    'Em voo',
+    'Em deslocamento até hospital',
+    'Chegada'
+  ];
+
   @override
   Widget build(BuildContext context) {
     void exit() {
@@ -72,13 +80,6 @@ class ActionBar extends StatelessWidget {
     }
 
     void sendPosition() {
-      const List<String> list = <String>[
-        'Em deslocamento até aeroporto',
-        'Embarque',
-        'Em voo',
-        'Em deslocamento até hospital',
-        'Chegada'
-      ];
       AlertDialog alert = AlertDialog(
         title: const Text("Qual a sua posição?",
             style: TextStyle(
@@ -87,12 +88,12 @@ class ActionBar extends StatelessWidget {
         content: Padding(
           padding: const EdgeInsets.all(8.0),
           child: DropdownMenu<String>(
-              initialSelection: list.first,
+              initialSelection: positionList.first,
               onSelected: (value) {
                 updatePosition(value);
               },
               dropdownMenuEntries:
-                  list.map<DropdownMenuEntry<String>>((String value) {
+                  positionList.map<DropdownMenuEntry<String>>((String value) {
                 return DropdownMenuEntry<String>(value: value, label: value);
               }).toList()),
         ),
