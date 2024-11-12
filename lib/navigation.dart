@@ -1,5 +1,6 @@
 import 'package:app_ases/screens/home.dart';
 import 'package:app_ases/screens/monitor_flight.dart';
+import 'package:app_ases/screens/perfil.dart';
 import 'package:flutter/material.dart';
 
 class Navigation extends StatefulWidget {
@@ -14,7 +15,7 @@ class _NavigationState extends State<Navigation> {
   List<Widget> widgetOptions = <Widget>[
     const Home(),
     MonitorFlightScreen(),
-    const Text('Index 2: Perfil'),
+    const Perfil(),
   ];
 
   @override
